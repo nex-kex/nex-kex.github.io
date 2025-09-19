@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Задание 1</title>
+</head>
+<body>
+
+<h2>Ссылки</h2>
+
+<ol>
+    <li>
+        <p>Абсолютная гиперссылка на главную страницу сайта kubsu.ru <br>
+            <a href="http://kubsu.ru">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Абсолютная на главную сайта kubsu.ru в протоколе https <br>
+            <a href="https://kubsu.ru">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Ссылка-изображение <br>
+            <a href="https://kubsu.ru" target="_blank">
+                <img src="/kubsu.png" alt="КубГУ" width="100" height="100">
+            </a></p>
+    </li>
+    <li>
+        <p>Сокращенная ссылка на внутреннюю страницу <br>
+            <a href="/index.html">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Сокращенная ссылка на главную страницу <br>
+            <a href="/">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Ссылка на фрагмент текущей страницы <br>
+            <a href="#cat">Посмотреть на котёнка</a></p>
+    </li>
+    <li>
+        <p>Ссылка с тремя параметрами в URL <br>
+            <a href="/index?queryset=queryset&sort=sort&page=1">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Ссылка с параметром id в URL <br>
+            <a href="/index?id=id">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Относительная ссылка в текущем каталоге <br>
+            <a href="./index.html">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Относительная ссылка в каталоге about <br>
+            <a href="/about/index.html">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Относительная ссылка на уровень выше <br>
+            <a href="../index.html">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Относительная ссылка на два уровня выше <br>
+            <a href="../../index.html">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Контекстная ссылка в тексте <br>
+            Текст с <a href="#cat">контекстной ссылкой</a> внутри.</p>
+    </li>
+    <li>
+        <p>Ссылка на фрагмент стороннего сайта <br>
+            <a href="https://www.iana.org/help/example-domains#legalnotice">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Ссылка из областей картинки <br>
+            <img src="/map.jpg" alt="Картинка с разными областями" usemap="#map"
+                 width="300" height="300">
+            <map name="map">
+                <area shape="rect" coords="0,0,150,300" href="/rect" alt="rect">
+                <area shape="circle" coords="150,150,150" href="/circle" alt="circle">
+            </map>
+        </p>
+    </li>
+    <li>
+        <p>Ссылка с пустым href <br>
+            <a href="">Cсылка</a></p>
+    </li>
+    <li>
+        <p>Ссылка без href <br>
+            <a>Ссылка</a></p>
+    </li>
+    <li>
+        <p>Ссылка с запретом перехода для поисковиков <br>
+            <a href="/no-follow" rel="nofollow">Ссылка</a></p>
+    </li>
+    <li>
+        <p>Ссылка с запретом индексации <br>
+            <a href="/no-index" rel="noindex">Cсылка</a></p>
+    </li>
+    <li>
+        <p>Нумерованный список с title </p>
+        <ol>
+            <li><a href="/link1" title="Описание ссылки 1">Ссылка 1</a></li>
+            <li><a href="/link2" title="Описание ссылки 2">Ссылка 2</a></li>
+            <li><a href="/link3" title="Описание ссылки 3">Ссылка 3</a></li>
+        </ol>
+    </li>
+    <li>
+        <p>Ссылка на FTP с авторизацией <br>
+            <a href="ftp://user:password@example/file.txt">FTP файл</a></p>
+    </li>
+</ol>
+
+<h2>Форма обратной связи</h2>
+
+<form action="/" method="post">
+    <div>
+        <label>ФИО:
+            <input type="text" name="name" placeholder="Иванов Иван Иванович">
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>Телефон:
+            <input type="tel" name="tel" placeholder="+7 (777) 777-77-77">
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>Email:
+            <input type="email" name="email" placeholder="mymail@mail.ru">
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>День рождения:
+            <input type="date" name="birthday" value="1982-07-10">
+        </label>
+    </div>
+    <br>
+    <div>
+        Пол:
+        <label>
+            <input type="radio" checked name="sex" value="Мужской">
+            Мужской
+        </label>
+        <label>
+            <input type="radio" name="sex" value="Женский">
+            Женский
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>
+            Любимые языкы программирования: <br>
+            <select name="lang" multiple="multiple" size="11">
+                <option value="Pascal">Pascal</option>
+                <option value="C">C</option>
+                <option value="Cpp" selected>C++</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="PHP">PHP</option>
+                <option value="Python" selected>Python</option>
+                <option value="Java" selected>Java</option>
+                <option value="Haskel">Haskel</option>
+                <option value="Clojure">Clojure</option>
+                <option value="Prolog">Prolog</option>
+                <option value="Scala">Scala</option>
+            </select>
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>Биография: <br>
+            <textarea cols="50" rows="5"></textarea>
+        </label>
+    </div>
+    <div>
+        <label><input type="checkbox" name="check-1">
+            C контрактом ознакомлен(а)</label>
+    </div>
+    <div>
+        <button type="submit" style="margin: 10px;">Сохранить</button>
+    </div>
+</form>
+
+<img src="/cat.jpg" alt="Котёнок не пришёл(" id="cat" style="margin-top: 1000px;">
+
+</body>
+</html>

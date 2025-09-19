@@ -3,88 +3,36 @@
 <head>
     <meta charset="utf-8">
     <title>Задания 1, 2</title>
-    <style>
-        .btn {
-           position: relative;
-           overflow: hidden;
-           z-index: 1;
-           padding: 10px 40px;
-           margin: 20px;
-           line-height: 30px;
-           font-size: 15px;
-           text-transform: uppercase;
-           background: lightblue;
-           border-width: 0;
-           box-shadow: 5px 5px 0 #4e7987;
-           outline: none;
-        }
-        .btn:hover {
-           color: #4e7987;
-        }
-        a {
-            text-decoration: none;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #4e7987;
-        }
-
-        tr:nth-child(even) {
-            background-color: lightblue;
-        }
-
-        tr:hover {
-            background-color: #e6f7fc;
-        }
-
-        .my-input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="margin:0;">
 
 <div>
 
     <!-- Навбар -->
-    <div style="background-color: lightblue; height: 120px;">
-        <header>
-            <img style="float:left; margin:10px; width:100px; height:100px;" src="kubsu.png"
-                 alt="Описание картинки"/>
-            <div>
-                <nav style="max-width: 960px; padding: 10px;
-            position: relative;
-            display: flex;
-            justify-content: flex-end; /* Прижимаем содержимое к правому краю */
-            margin-left: auto; /* Автоматический отступ слева прижимает вправо */
-            right: 0; top: 0;">
-                    <ul style="margin: 0;">
-                        <li style="display: inline; padding: 5px; border-right: solid;">
-                            <a href="https://kubsu.ru">КубГУ</a>
-                        </li>
-                        <li style="display: inline; padding: 5px; border-right: solid;">
-                            <a href="https://moodle.kubsu.ru/">moodle</a>
-                        </li>
-                        <li style="display: inline; padding: 5px;">
-                            <a href="https://moodle.kubsu.ru/course/view.php?id=780">Web UI</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+    <div style="background-color: lightblue; padding-bottom: 20px;">
 
-            <h1 style="margin: 10px;">Название сайта</h1>
-        </header>
+        <img style="float: left; margin: 20px; width: 100px; height: 100px;" src="/kubsu.png"
+             alt="Описание картинки">
+
+        <nav style="max-width: 960px;">
+            <ul style="margin: 0;">
+                <li>
+                    <a class="btn" href="https://kubsu.ru">КубГУ</a>
+                </li>
+                <li>
+                    <a class="btn" href="https://moodle.kubsu.ru/">moodle</a>
+                </li>
+                <li>
+                    <a class="btn" href="https://moodle.kubsu.ru/course/view.php?id=780">Web UI</a>
+                </li>
+                <li>
+                    <a class="btn" href="https://github.com/nex-kex">GitHub</a>
+                </li>
+            </ul>
+        </nav>
+
+        <h1 style="margin: 20px;">Задания по лекциям 1 и 2</h1>
 
 
     </div>
@@ -93,8 +41,8 @@
     <div style="max-width: 960px; background-color: lightblue; margin: 20px auto; padding: 20px;">
 
         <!-- Ссылки -->
-        <div style="background-color: white; border: solid;">
-            <h2 style="text-align: center;">Ссылки</h2>
+        <div class="card" style="margin-top: 0;">
+            <h2>Ссылки</h2>
             <ol>
                 <li>
                     <p>Абсолютная гиперссылка на главную страницу сайта kubsu.ru <br>
@@ -107,12 +55,12 @@
                 <li>
                     <p>Ссылка-изображение <br>
                         <a href="https://kubsu.ru" target="_blank">
-                            <img src="kubsu.png" alt="КубГУ" width="100" height="100">
+                            <img src="/kubsu.png" alt="КубГУ" width="100" height="100">
                         </a></p>
                 </li>
                 <li>
                     <p>Сокращенная ссылка на внутреннюю страницу <br>
-                        <a href="/index.html">Ссылка</a></p>
+                        <a href="/lab1/index.html">Ссылка</a></p>
                 </li>
                 <li>
                     <p>Сокращенная ссылка на главную страницу <br>
@@ -124,7 +72,7 @@
                 </li>
                 <li>
                     <p>Ссылка с тремя параметрами в URL <br>
-                        <a href="/index?queryset=queryset&sort=sort&page=1">Ссылка</a></p>
+                        <a href="https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=rate&search=кроссовки">Ссылка</a></p>
                 </li>
                 <li>
                     <p>Ссылка с параметром id в URL <br>
@@ -148,7 +96,7 @@
                 </li>
                 <li>
                     <p>Контекстная ссылка в тексте <br>
-                        Текст с <a href="#cat">контекстной ссылкой</a> внутри.</p>
+                        Текст с <a href="#form1">контекстной ссылкой</a> внутри.</p>
                 </li>
                 <li>
                     <p>Ссылка на фрагмент стороннего сайта <br>
@@ -156,7 +104,7 @@
                 </li>
                 <li>
                     <p>Ссылка из областей картинки <br>
-                        <img src="map.jpg" alt="Картинка с разными областями" usemap="#map"
+                        <img src="/map.jpg" alt="Картинка с разными областями" usemap="#map"
                              width="300" height="300">
                         <map name="map">
                             <area shape="rect" coords="0,0,150,300" href="/rect" alt="rect">
@@ -196,15 +144,15 @@
         </div>
 
         <!-- Таблица -->
-        <div style="background-color: white; margin-top: 20px; border: solid;">
-            <h2 style="text-align: center;">Таблица "Фильмы о Гарри Поттере"</h2>
+        <div class="card">
+            <h2>Таблица "Фильмы о Гарри Поттере"</h2>
             <table class="table table-striped" style="width: 100%; margin: 0 auto;">
                 <thead>
                 <tr>
                     <th scope="col">№</th>
                     <th scope="col">Название фильма</th>
                     <th scope="col">Год выхода</th>
-                    <th scope="col" style="text-align: center;">Рейтинг (Кинопоиск)</th>
+                    <th scope="col">Рейтинг (Кинопоиск)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -212,25 +160,25 @@
                     <td>1</td>
                     <td>Гарри Поттер и философский камень</td>
                     <td>2001</td>
-                    <td>8.2</td>
+                    <td>7.6</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Гарри Поттер и Тайная комната</td>
                     <td>2002</td>
-                    <td>8.0</td>
+                    <td>7.4</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Гарри Поттер и узник Азкабана</td>
                     <td>2004</td>
-                    <td>8.4</td>
+                    <td>7.6</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Гарри Поттер и Кубок огня</td>
                     <td>2005</td>
-                    <td>8.0</td>
+                    <td>7.4</td>
                 </tr>
                 <tr>
                     <td>5</td>
@@ -242,16 +190,28 @@
                     <td>6</td>
                     <td>Гарри Поттер и Принц-полукровка</td>
                     <td>2009</td>
-                    <td>8.0</td>
+                    <td>7.3</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Гарри Поттер и Дары Смерти: Часть I</td>
+                    <td>2010</td>
+                    <td>7.9</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Гарри Поттер и Дары Смерти: Часть II</td>
+                    <td>2011</td>
+                    <td>7.4</td>
                 </tr>
                 </tbody>
             </table>
         </div>
 
         <!-- Форма -->
-        <div style="background-color: white; margin-top: 20px; border: solid; padding: 0 20px;">
-            <h2 style="text-align: center;">Форма обратной связи</h2>
-            <form action="/" method="post" id="form1">
+        <div id="form1" class="card" style="padding: 0 20px;">
+            <h2>Форма обратной связи</h2>
+            <form action="/" method="post">
                 <div>
                     <label>ФИО:
                         <input type="text" class="my-input" name="name" placeholder="Иванов Иван Иванович" required>
@@ -290,7 +250,7 @@
                 <br>
                 <div>
                     <label>
-                        Любимые языкы программирования: <br>
+                        Любимые языки программирования: <br>
                         <select name="lang" multiple="multiple" size="11" required>
                             <option value="Pascal">Pascal</option>
                             <option value="C">C</option>
@@ -325,8 +285,8 @@
     </div>
 
     <!-- Футер -->
-    <div style="background-color: lightblue; height: 38px; margin-top: 20px;">
-        <footer style="font-size: 18px; padding: 10px;">
+    <div style="background-color: lightblue; margin-top: 20px;">
+        <footer style="font-size: 20px; padding: 10px;">
             (с) Тертичник Маргарита
         </footer>
     </div>
