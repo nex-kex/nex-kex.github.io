@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Задания 1, 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin:0;">
+
+<div>
+
+    <!-- Навбар -->
+    <div style="background-color: lightblue; padding-bottom: 20px;">
+
+        <img style="float: left; margin: 20px; width: 100px; height: 100px;" src="/kubsu.png"
+             alt="Описание картинки">
+
+        <nav style="max-width: 960px;">
+            <ul style="margin: 0;">
+                <li>
+                    <a class="btn" href="https://kubsu.ru">КубГУ</a>
+                </li>
+                <li>
+                    <a class="btn" href="https://moodle.kubsu.ru/">moodle</a>
+                </li>
+                <li>
+                    <a class="btn" href="https://moodle.kubsu.ru/course/view.php?id=780">Web UI</a>
+                </li>
+                <li>
+                    <a class="btn" href="https://github.com/nex-kex">GitHub</a>
+                </li>
+            </ul>
+        </nav>
+
+        <h1 style="margin: 20px;">Задания по лекциям 1 и 2</h1>
+
+
+    </div>
+
+    <!-- Выравнивание по центру страницы -->
+    <div style="max-width: 960px; background-color: lightblue; margin: 20px auto; padding: 20px;">
+
+        <!-- Ссылки -->
+        <div class="card" style="margin-top: 0;">
+            <h2>Ссылки</h2>
+            <ol>
+                <li>
+                    <p>Абсолютная гиперссылка на главную страницу сайта kubsu.ru <br>
+                        <a href="http://kubsu.ru">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Абсолютная на главную сайта kubsu.ru в протоколе https <br>
+                        <a href="https://kubsu.ru">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Ссылка-изображение <br>
+                        <a href="https://kubsu.ru" target="_blank">
+                            <img src="/kubsu.png" alt="КубГУ" width="100" height="100">
+                        </a></p>
+                </li>
+                <li>
+                    <p>Сокращенная ссылка на внутреннюю страницу <br>
+                        <a href="/lab1/index.html">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Сокращенная ссылка на главную страницу <br>
+                        <a href="/">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Ссылка на фрагмент текущей страницы <br>
+                        <a href="#form1">Перейти к форме</a></p>
+                </li>
+                <li>
+                    <p>Ссылка с тремя параметрами в URL <br>
+                        <a href="https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=rate&search=кроссовки">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Ссылка с параметром id в URL <br>
+                        <a href="/index?id=id">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Относительная ссылка в текущем каталоге <br>
+                        <a href="./index.html">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Относительная ссылка в каталоге about <br>
+                        <a href="/about/index.html">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Относительная ссылка на уровень выше <br>
+                        <a href="../index.html">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Относительная ссылка на два уровня выше <br>
+                        <a href="../../index.html">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Контекстная ссылка в тексте <br>
+                        Текст с <a href="#form1">контекстной ссылкой</a> внутри.</p>
+                </li>
+                <li>
+                    <p>Ссылка на фрагмент стороннего сайта <br>
+                        <a href="https://www.iana.org/help/example-domains#legalnotice">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Ссылка из областей картинки <br>
+                        <img src="/map.jpg" alt="Картинка с разными областями" usemap="#map"
+                             width="300" height="300">
+                        <map name="map">
+                            <area shape="rect" coords="0,0,150,300" href="https://kubsu.ru/" alt="rect">
+                            <area shape="circle" coords="150,150,150" href="https://kubsau.ru/" alt="circle">
+                        </map>
+                    </p>
+                </li>
+                <li>
+                    <p>Ссылка с пустым href <br>
+                        <a href="">Cсылка</a></p>
+                </li>
+                <li>
+                    <p>Ссылка без href <br>
+                        <a>Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Ссылка с запретом перехода для поисковиков <br>
+                        <a href="/no-follow" rel="nofollow">Ссылка</a></p>
+                </li>
+                <li>
+                    <p>Ссылка с запретом индексации <br>
+                        <a href="/no-index" rel="noindex">Cсылка</a></p>
+                </li>
+                <li>
+                    <p>Нумерованный список с title </p>
+                    <ol>
+                        <li><a href="/link1" title="Описание ссылки 1">Ссылка 1</a></li>
+                        <li><a href="/link2" title="Описание ссылки 2">Ссылка 2</a></li>
+                        <li><a href="/link3" title="Описание ссылки 3">Ссылка 3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <p>Ссылка на FTP с авторизацией <br>
+                        <a href="ftp://user:password@example/file.txt">FTP файл</a></p>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Таблица -->
+        <div class="card">
+            <h2>Таблица "Фильмы о Гарри Поттере"</h2>
+            <table class="table table-striped" style="width: 100%; margin: 0 auto;">
+                <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Название фильма</th>
+                    <th scope="col">Год выхода</th>
+                    <th scope="col">Рейтинг (Кинопоиск)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Гарри Поттер и философский камень</td>
+                    <td>2001</td>
+                    <td>7.6</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Гарри Поттер и Тайная комната</td>
+                    <td>2002</td>
+                    <td>7.4</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Гарри Поттер и узник Азкабана</td>
+                    <td>2004</td>
+                    <td>7.6</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Гарри Поттер и Кубок огня</td>
+                    <td>2005</td>
+                    <td>7.4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Гарри Поттер и Орден Феникса</td>
+                    <td>2007</td>
+                    <td>7.8</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Гарри Поттер и Принц-полукровка</td>
+                    <td>2009</td>
+                    <td>7.3</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Гарри Поттер и Дары Смерти: Часть I</td>
+                    <td>2010</td>
+                    <td>7.9</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Гарри Поттер и Дары Смерти: Часть II</td>
+                    <td>2011</td>
+                    <td>7.4</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Форма -->
+        <div id="form1" class="card" style="padding: 0 20px;">
+            <h2>Форма обратной связи</h2>
+            <form action="/" method="post">
+                <div>
+                    <label>ФИО:
+                        <input type="text" class="my-input" name="name" placeholder="Иванов Иван Иванович" required>
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <label>Телефон:
+                        <input type="tel" class="my-input" name="tel" placeholder="+7 (777) 777-77-77" required>
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <label>Email:
+                        <input type="email" class="my-input" name="email" placeholder="mymail@mail.ru" required>
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <label>День рождения:
+                        <input type="date" class="my-input" name="birthday" value="1982-07-10" required>
+                    </label>
+                </div>
+                <br>
+                <div>
+                    Пол:
+                    <label>
+                        <input type="radio" checked name="sex" value="Мужской">
+                        Мужской
+                    </label>
+                    <label>
+                        <input type="radio" name="sex" value="Женский">
+                        Женский
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <label>
+                        Любимые языки программирования: <br>
+                        <select name="lang" multiple="multiple" size="11" required>
+                            <option value="Pascal">Pascal</option>
+                            <option value="C">C</option>
+                            <option value="Cpp" selected>C++</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Python" selected>Python</option>
+                            <option value="Java" selected>Java</option>
+                            <option value="Haskel">Haskel</option>
+                            <option value="Clojure">Clojure</option>
+                            <option value="Prolog">Prolog</option>
+                            <option value="Scala">Scala</option>
+                        </select>
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <label>Биография: <br>
+                        <textarea class="my-input" cols="50" rows="5" required></textarea>
+                    </label>
+                </div>
+                <div>
+                    <label><input type="checkbox" name="check-1" required>
+                        C контрактом ознакомлен(а)</label>
+                </div>
+                <div>
+                    <button class="btn" type="submit" style="margin: 20px;">Сохранить</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Футер -->
+    <div style="background-color: lightblue; margin-top: 20px;">
+        <footer style="font-size: 20px; padding: 10px;">
+            (с) Тертичник Маргарита
+        </footer>
+    </div>
+
+</div>
+
+</body>
+</html>

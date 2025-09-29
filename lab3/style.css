@@ -1,0 +1,50 @@
+a { text-decoration: none; }
+
+h2 { text-align: center; }
+
+nav {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    right: 0;
+    top: 0;
+}
+nav li { display: inline; }
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+th { background-color: #4e7987; }
+tr:nth-child(even) { background-color: lightblue; }
+tr:hover { background-color: #e6f7fc; }
+
+.card {
+    background-color: white;
+    border: solid;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 40px;
+    line-height: 30px;
+    font-size: 15px;
+    border: 1px solid #4e7987;
+    color: black;
+    background-color: lightblue;
+}
+.btn:hover {
+    background-color: #4e7987;
+    color: white;
+}
+
+.my-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
