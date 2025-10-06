@@ -1,17 +1,96 @@
-a { text-decoration: none; }
+nav {
+    flex: 1 1 100%;
+    order: 3;
+    flex-direction: column;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+nav li a {
+    display: block;
+    flex: 1;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#header-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+}
+
+logo {
+    flex: 0 0 auto;
+}
+
+logo img {
+    width: 100px;
+    height: 100px;
+}
+
+header {
+    flex: 1;
+}
+
+header h1 {
+    margin: 20px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1000px) {
+    #header-wrapper {
+        flex-wrap: wrap;
+        position: relative;
+        align-items: flex-start;
+    }
+    nav {
+        order: 2;
+        flex: 0 0 auto;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-end;
+        margin-left: auto;
+        max-width: none;
+        height: auto;
+        min-height: 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    nav li {
+        display: inline;
+    }
+
+    nav li a {
+        display: inline-block;
+        padding: 3px 8px;
+    }
+
+    header {
+        order: 3;
+        flex: 1 1 100%;
+    }
+
+    logo {
+        order: 1;
+        flex: 0 0 auto;
+    }
+}
 
 h2 { text-align: center; }
-
-nav {
-    padding: 10px;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    margin-left: auto;
-    right: 0;
-    top: 0;
-}
-nav li { display: inline; }
 
 th, td {
     padding: 12px;
@@ -24,7 +103,6 @@ tr:hover { background-color: #e6f7fc; }
 .card {
     background-color: white;
     border: solid;
-    margin-top: 20px;
 }
 
 .btn {

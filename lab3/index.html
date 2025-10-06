@@ -1,21 +1,56 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Задания 1, 2</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #content-wrapper #table {
+            order: 1;
+        }
+
+        #content-wrapper #links {
+            order: 2;
+        }
+
+        #content-wrapper #form {
+            order: 3;
+        }
+
+        @media screen and (min-width: 1000px) {
+            #content-wrapper #table {
+                order: 2;
+            }
+
+            #content-wrapper #links {
+                order: 1;
+            }
+
+            #content-wrapper #form {
+                order: 3;
+            }
+        }
+    </style>
 </head>
-<body style="margin:0;">
+<body style="margin:0">
 
 <div>
 
     <!-- Навбар -->
-    <div style="background-color: lightblue; padding-bottom: 20px;">
+    <div id="header-wrapper" style="background-color: lightblue;">
 
-        <img style="float: left; margin: 20px; width: 100px; height: 100px;" src="/kubsu.png"
-             alt="Описание картинки">
+        <logo>
+            <img style="float: left; margin: 20px; width: 100px; height: 100px;" src="../kubsu.png"
+                 alt="Описание картинки">
+        </logo>
 
-        <nav style="max-width: 960px;">
+        <nav>
             <ul style="margin: 0;">
                 <li>
                     <a class="btn" href="https://kubsu.ru">КубГУ</a>
@@ -32,16 +67,17 @@
             </ul>
         </nav>
 
-        <h1 style="margin: 20px;">Задания по лекциям 1 и 2</h1>
-
+        <header>
+            <h1>Задание 3</h1>
+        </header>
 
     </div>
 
     <!-- Выравнивание по центру страницы -->
-    <div style="max-width: 960px; background-color: lightblue; margin: 20px auto; padding: 20px;">
+    <div style="max-width: 960px; background-color: lightblue; margin: 20px auto; padding: 20px;"  id="content-wrapper">
 
         <!-- Ссылки -->
-        <div class="card" style="margin-top: 0;">
+        <div id="links" class="card" style="margin-top: 0;">
             <h2>Ссылки</h2>
             <ol>
                 <li>
@@ -55,7 +91,7 @@
                 <li>
                     <p>Ссылка-изображение <br>
                         <a href="https://kubsu.ru" target="_blank">
-                            <img src="/kubsu.png" alt="КубГУ" width="100" height="100">
+                            <img src="../kubsu.png" alt="КубГУ" width="100" height="100">
                         </a></p>
                 </li>
                 <li>
@@ -68,11 +104,12 @@
                 </li>
                 <li>
                     <p>Ссылка на фрагмент текущей страницы <br>
-                        <a href="#form1">Перейти к форме</a></p>
+                        <a href="#form">Перейти к форме</a></p>
                 </li>
                 <li>
                     <p>Ссылка с тремя параметрами в URL <br>
-                        <a href="https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=rate&search=кроссовки">Ссылка</a></p>
+                        <a href="https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=rate&search=кроссовки">Ссылка</a>
+                    </p>
                 </li>
                 <li>
                     <p>Ссылка с параметром id в URL <br>
@@ -96,7 +133,7 @@
                 </li>
                 <li>
                     <p>Контекстная ссылка в тексте <br>
-                        Текст с <a href="#form1">контекстной ссылкой</a> внутри.</p>
+                        Текст с <a href="#form">контекстной ссылкой</a> внутри.</p>
                 </li>
                 <li>
                     <p>Ссылка на фрагмент стороннего сайта <br>
@@ -104,7 +141,7 @@
                 </li>
                 <li>
                     <p>Ссылка из областей картинки <br>
-                        <img src="/map.jpg" alt="Картинка с разными областями" usemap="#map"
+                        <img src="../map.jpg" alt="Картинка с разными областями" usemap="#map"
                              width="300" height="300">
                         <map name="map">
                             <area shape="rect" coords="0,0,150,300" href="https://kubsu.ru/" alt="rect">
@@ -144,7 +181,7 @@
         </div>
 
         <!-- Таблица -->
-        <div class="card">
+        <div id="table" class="card">
             <h2>Таблица "Фильмы о Гарри Поттере"</h2>
             <table class="table table-striped" style="width: 100%; margin: 0 auto;">
                 <thead>
@@ -209,7 +246,7 @@
         </div>
 
         <!-- Форма -->
-        <div id="form1" class="card" style="padding: 0 20px;">
+        <div id="form" class="card" style="padding: 0 20px;">
             <h2>Форма обратной связи</h2>
             <form action="/" method="post">
                 <div>
