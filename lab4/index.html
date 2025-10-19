@@ -2,15 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание 3</title>
+    <title>Задание 4</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="margin:0">
 
-<div>
+<div class="row">
 
     <!-- Навбар -->
-    <div id="header-wrapper" style="background-color: lightblue;">
+    <div id="header-wrapper" style="background-color: lightblue;" class="m-0">
 
         <logo>
             <img style="float: left; margin: 20px; width: 100px; height: 100px;" src="../kubsu.png"
@@ -19,32 +20,43 @@
 
         <nav>
             <ul style="margin: 0;">
-                <li>
-                    <a class="btn" href="https://kubsu.ru">КубГУ</a>
+                <li class="row">
+                    <div class="col"></div>
+                    <a class="my-btn col-11" href="https://kubsu.ru">КубГУ</a>
+                    <div class="col"></div>
                 </li>
-                <li>
-                    <a class="btn" href="https://moodle.kubsu.ru/">moodle</a>
+                <li class="row">
+                    <div class="col"></div>
+                    <a class="my-btn col-11" href="https://moodle.kubsu.ru/">moodle</a>
+                    <div class="col"></div>
                 </li>
-                <li>
-                    <a class="btn" href="https://moodle.kubsu.ru/course/view.php?id=780">Web UI</a>
+                <li class="row">
+                    <div class="col"></div>
+                    <a class="my-btn col-11" href="https://moodle.kubsu.ru/course/view.php?id=780">Web UI</a>
+                    <div class="col"></div>
                 </li>
-                <li>
-                    <a class="btn" href="https://github.com/nex-kex">GitHub</a>
+                <li class="row">
+                    <div class="col"></div>
+                    <a class="my-btn col-11" href="https://github.com/nex-kex">GitHub</a>
+                    <div class="col"></div>
                 </li>
             </ul>
         </nav>
 
         <header>
-            <h1>Задание 3</h1>
+            <h1>Задание 4</h1>
         </header>
 
     </div>
 
+
+    <div class="col"></div>
     <!-- Выравнивание по центру страницы -->
-    <div style="max-width: 960px; background-color: lightblue; margin: 20px auto; padding: 20px;"  id="content-wrapper">
+    <div style="background-color: lightblue; margin: 20px auto; padding: 20px;"
+         id="content-wrapper" class="col-12 col-lg-8 ">
 
         <!-- Ссылки -->
-        <div id="links" class="card" style="margin-top: 0;">
+        <div id="links" class="my-card" style="margin-top: 0;">
             <h2>Ссылки</h2>
             <ol>
                 <li>
@@ -148,11 +160,11 @@
         </div>
 
         <!-- Таблица -->
-        <div id="table" class="card">
+        <div id="table" class="my-card">
             <h2>Таблица "Фильмы о Гарри Поттере"</h2>
             <table class="table table-striped" style="width: 100%; margin: 0 auto;">
                 <thead>
-                <tr>
+                <tr style="background-color: #4e7987;">
                     <th scope="col">№</th>
                     <th scope="col">Название фильма</th>
                     <th scope="col">Год выхода</th>
@@ -213,80 +225,73 @@
         </div>
 
         <!-- Форма -->
-        <div id="form" class="card" style="padding: 0 20px;">
+        <div id="form" class="my-card" style="padding: 0 20px;">
             <h2>Форма обратной связи</h2>
             <form action="/" method="post">
                 <div>
-                    <label>ФИО:
-                        <input type="text" class="my-input" name="name" placeholder="Иванов Иван Иванович" required>
-                    </label>
+                    <label class="form-label">ФИО:</label>
+                    <input type="text" class="form-control" name="name" placeholder="Иванов Иван Иванович" required>
                 </div>
                 <br>
                 <div>
-                    <label>Телефон:
-                        <input type="tel" class="my-input" name="tel" placeholder="+7 (777) 777-77-77" required>
-                    </label>
+                    <label class="form-label">Телефон:</label>
+                    <input type="tel" class="form-control" name="tel" placeholder="+7 (777) 777-77-77" required>
                 </div>
                 <br>
                 <div>
-                    <label>Email:
-                        <input type="email" class="my-input" name="email" placeholder="mymail@mail.ru" required>
-                    </label>
+                    <label class="form-label">Email:</label>
+                    <input type="email" class="form-control" name="email" placeholder="mymail@mail.ru" required>
+
                 </div>
                 <br>
                 <div>
-                    <label>День рождения:
-                        <input type="date" class="my-input" name="birthday" value="1982-07-10" required>
-                    </label>
+                    <label class="form-label">День рождения:</label>
+                    <input type="date" class="form-control" name="birthday" value="1982-07-10" required>
                 </div>
                 <br>
                 <div>
                     Пол:
-                    <label>
-                        <input type="radio" checked name="sex" value="Мужской">
-                        Мужской
-                    </label>
-                    <label>
-                        <input type="radio" name="sex" value="Женский">
-                        Женский
-                    </label>
+                    <label class="form-label"></label>
+                    <input type="radio" checked name="sex" value="Мужской">
+                    Мужской
+                    <input type="radio" name="sex" value="Женский">
+                    Женский
                 </div>
                 <br>
                 <div>
-                    <label>
-                        Любимые языки программирования: <br>
-                        <select name="lang" multiple="multiple" size="11" required>
-                            <option value="Pascal">Pascal</option>
-                            <option value="C">C</option>
-                            <option value="Cpp" selected>C++</option>
-                            <option value="JavaScript">JavaScript</option>
-                            <option value="PHP">PHP</option>
-                            <option value="Python" selected>Python</option>
-                            <option value="Java" selected>Java</option>
-                            <option value="Haskel">Haskel</option>
-                            <option value="Clojure">Clojure</option>
-                            <option value="Prolog">Prolog</option>
-                            <option value="Scala">Scala</option>
-                        </select>
-                    </label>
+                    <label class="form-label">Любимые языки программирования:</label>
+                    <select class="form-control" name="lang" multiple="multiple" size="11" required>
+                        <option value="Pascal">Pascal</option>
+                        <option value="C">C</option>
+                        <option value="Cpp" selected>C++</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Python" selected>Python</option>
+                        <option value="Java" selected>Java</option>
+                        <option value="Haskel">Haskel</option>
+                        <option value="Clojure">Clojure</option>
+                        <option value="Prolog">Prolog</option>
+                        <option value="Scala">Scala</option>
+                    </select>
                 </div>
                 <br>
                 <div>
-                    <label>Биография: <br>
-                        <textarea class="my-input" cols="50" rows="5" required></textarea>
-                    </label>
+                    <label class="form-label">Биография:</label>
+                    <textarea class="form-control" cols="50" rows="5" required></textarea>
+
+                </div>
+                <div class="mt-2">
+                    <input type="checkbox" name="check-1" required>
+                    <label class="form-label">C контрактом ознакомлен(а)</label>
                 </div>
                 <div>
-                    <label><input type="checkbox" name="check-1" required>
-                        C контрактом ознакомлен(а)</label>
-                </div>
-                <div>
-                    <button class="btn" type="submit" style="margin: 20px;">Сохранить</button>
+                    <button class="my-btn" type="submit" style="margin: 20px;">Сохранить</button>
                 </div>
             </form>
         </div>
 
     </div>
+    <div class="col"></div>
 
     <!-- Футер -->
     <div style="background-color: lightblue; margin-top: 20px;">
@@ -297,5 +302,6 @@
 
 </div>
 
+<script src="../static/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

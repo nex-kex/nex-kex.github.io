@@ -21,6 +21,24 @@ a {
     text-decoration: none;
 }
 
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#content-wrapper #table {
+    order: 1;
+}
+
+#content-wrapper #links {
+    order: 2;
+}
+
+#content-wrapper #form {
+    order: 3;
+}
+
 #header-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -46,39 +64,19 @@ header h1 {
     overflow: hidden;
 }
 
-#content-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        #content-wrapper #table {
-            order: 1;
-        }
-
-        #content-wrapper #links {
-            order: 2;
-        }
-
-        #content-wrapper #form {
-            order: 3;
-        }
-
-        @media screen and (min-width: 1000px) {
-            #content-wrapper #table {
-                order: 2;
-            }
-
-            #content-wrapper #links {
-                order: 1;
-            }
-
-            #content-wrapper #form {
-                order: 3;
-            }
-        }
-
 @media screen and (min-width: 1000px) {
+    #content-wrapper #table {
+        order: 2;
+    }
+
+    #content-wrapper #links {
+        order: 1;
+    }
+
+    #content-wrapper #form {
+        order: 3;
+    }
+
     #header-wrapper {
         flex-wrap: wrap;
         position: relative;
@@ -122,22 +120,24 @@ header h1 {
     }
 }
 
-h2 { text-align: center; }
+h2 {
+    margin: 10px 20px;
+    text-align: center;
+}
 
 th, td {
     padding: 12px;
     text-align: center;
 }
-th { background-color: #4e7987; }
 tr:nth-child(even) { background-color: lightblue; }
 tr:hover { background-color: #e6f7fc; }
 
-.card {
+.my-card {
     background-color: white;
     border: solid;
 }
 
-.btn {
+.my-btn {
     padding: 10px 40px;
     line-height: 30px;
     font-size: 15px;
@@ -145,7 +145,7 @@ tr:hover { background-color: #e6f7fc; }
     color: black;
     background-color: lightblue;
 }
-.btn:hover {
+.my-btn:hover {
     background-color: #4e7987;
     color: white;
 }
