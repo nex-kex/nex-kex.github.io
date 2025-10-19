@@ -18,6 +18,11 @@ a {
     text-decoration: none;
 }
 
+logo img {
+    width: 100px;
+    height: 100px;
+}
+
 header h1 {
     margin: 20px;
     overflow: hidden;

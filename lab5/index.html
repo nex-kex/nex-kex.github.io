@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 4</title>
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -14,36 +13,38 @@
     <div id="header-wrapper" class="py-2">
         <div class="container-fluid">
             <!-- Первая строка: лого + навигация (десктоп) / лого + заголовок (мобильные) -->
-            <div class="row align-items-top p-2">
+            <div class="row align-items-center">
 
                 <!-- Лого -->
-                <div class="col-auto order-1 py-2 px-0 p-md-0">
-                    <img style="width: 100px; height: 100px;" src="../kubsu.png"
-                         alt="Описание картинки">
+                <div class="col-auto order-1">
+                    <logo>
+                        <img class="my-2" src="../kubsu.png"
+                             alt="Описание картинки">
+                    </logo>
                 </div>
 
                 <!-- Заголовок (только для мобильных) -->
-                <div class="col-auto d-md-none order-2 align-self-center">
+                <div class="col-auto d-md-none order-2">
                     <header>
-                        <h1 class="my-2">Задание 4</h1>
+                        <h1 class="my-2">Задание 3</h1>
                     </header>
                 </div>
 
                 <!-- Навигация -->
-                <div class="col-md order-3 order-md-2 px-0">
+                <div class="col-md order-3 order-md-2">
                     <nav>
                         <ul class="list-unstyled mb-0 d-flex flex-column flex-md-row flex-md-wrap justify-content-md-end">
-                            <li class="my-1 my-md-0 mx-md-1">
+                            <li class="my-1 mx-md-1">
                                 <a class="my-btn w-100 w-md-auto" href="https://kubsu.ru">КубГУ</a>
                             </li>
-                            <li class="my-1 my-md-0 mx-md-1">
+                            <li class="my-1 mx-md-1">
                                 <a class="my-btn w-100 w-md-auto" href="https://moodle.kubsu.ru/">moodle</a>
                             </li>
-                            <li class="my-1 my-md-0 mx-md-1">
+                            <li class="my-1 mx-md-1">
                                 <a class="my-btn w-100 w-md-auto" href="https://moodle.kubsu.ru/course/view.php?id=780">Web
                                     UI</a>
                             </li>
-                            <li class="my-1 my-md-0 mx-md-1">
+                            <li class="my-1 mx-md-1">
                                 <a class="my-btn w-100 w-md-auto" href="https://github.com/nex-kex">GitHub</a>
                             </li>
                         </ul>
@@ -55,7 +56,7 @@
             <div class="row d-none d-md-block">
                 <div class="col-12">
                     <header>
-                        <h1 class="mx-0">Задание 4</h1>
+                        <h1 class="mx-0">Задание 3</h1>
                     </header>
                 </div>
             </div>
@@ -316,6 +317,7 @@
     </footer>
 </div>
 
+</div>
 
 <script src="../static/js/bootstrap.bundle.min.js"></script>
 </body>
