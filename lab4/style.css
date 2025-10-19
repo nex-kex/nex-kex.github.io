@@ -1,55 +1,18 @@
-nav {
-    flex: 1 1 100%;
-    order: 3;
-    flex-direction: column;
+#header-wrapper {
+    background-color: lightblue;
 }
+
 nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }
+
 nav li a {
     display: block;
     flex: 1;
     text-align: center;
 }
-
-#content-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#content-wrapper #table {
-    order: 1;
-}
-
-#content-wrapper #links {
-    order: 2;
-}
-
-#content-wrapper #form {
-    order: 3;
-}
-
-#header-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 10px;
-}
-
-logo {
-    flex: 0 0 auto;
-}
-
-header {
-    flex: 1;
-}
-
 
 a {
     text-decoration: none;
@@ -70,6 +33,26 @@ h2 {
     text-align: center;
 }
 
+.my-btn {
+    padding: 10px 40px;
+    line-height: 30px;
+    font-size: 15px;
+    border: 1px solid #4e7987;
+    color: black;
+    background-color: lightblue;
+}
+.my-btn:hover {
+    background-color: #4e7987;
+    color: white;
+}
+
+#content-wrapper {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 th, td {
     padding: 12px;
     text-align: center;
@@ -85,19 +68,6 @@ tr:hover { background-color: #e6f7fc; }
     border: solid;
 }
 
-.my-btn {
-    padding: 10px 40px;
-    line-height: 30px;
-    font-size: 15px;
-    border: 1px solid #4e7987;
-    color: black;
-    background-color: lightblue;
-}
-.my-btn:hover {
-    background-color: #4e7987;
-    color: white;
-}
-
 .my-input {
     width: 100%;
     padding: 12px;
@@ -105,4 +75,12 @@ tr:hover { background-color: #e6f7fc; }
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;
+}
+
+#footer-wrapper {
+    background-color: lightblue;
+}
+
+footer {
+    font-size: 20px;
 }
