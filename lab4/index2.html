@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DeepSeek</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin:0">
+
+<div>
+
+    <!-- Навбар -->
+    <div id="header-wrapper" style="background-color: lightblue;" class="py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <logo>
+                        <img style="width: 100px; height: 100px;" src="../kubsu.png" alt="Описание картинки">
+                    </logo>
+                </div>
+                <div class="col">
+                    <nav>
+                        <ul class="list-unstyled mb-0 d-flex flex-wrap justify-content-center justify-content-md-end">
+                            <li class="mx-1 my-1">
+                                <a class="btn" href="https://kubsu.ru">КубГУ</a>
+                            </li>
+                            <li class="mx-1 my-1">
+                                <a class="btn" href="https://moodle.kubsu.ru/">moodle</a>
+                            </li>
+                            <li class="mx-1 my-1">
+                                <a class="btn" href="https://moodle.kubsu.ru/course/view.php?id=780">Web UI</a>
+                            </li>
+                            <li class="mx-1 my-1">
+                                <a class="btn" href="https://github.com/nex-kex">GitHub</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <header>
+                        <h1 class="text-center my-3">Задание 4</h1>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контент -->
+    <div class="container my-4" id="content-wrapper" style="background-color: lightblue; padding: 20px;">
+        <div class="row">
+            <div class="col-12">
+                <!-- Ссылки -->
+                <div id="links" class="card mb-4">
+                    <div class="card-body">
+                        <h2>Ссылки</h2>
+                        <ol>
+                            <li>
+                                <p>Абсолютная гиперссылка на главную страницу сайта kubsu.ru <br>
+                                    <a href="http://kubsu.ru">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Абсолютная на главную сайта kubsu.ru в протоколе https <br>
+                                    <a href="https://kubsu.ru">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Ссылка-изображение <br>
+                                    <a href="https://kubsu.ru" target="_blank">
+                                        <img src="../kubsu.png" alt="КубГУ" width="100" height="100">
+                                    </a></p>
+                            </li>
+                            <li>
+                                <p>Сокращенная ссылка на внутреннюю страницу <br>
+                                    <a href="/lab1/index.html">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Сокращенная ссылка на главную страницу <br>
+                                    <a href="/">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Ссылка на фрагмент текущей страницы <br>
+                                    <a href="#form">Перейти к форме</a></p>
+                            </li>
+                            <li>
+                                <p>Ссылка с тремя параметрами в URL <br>
+                                    <a href="https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=rate&search=кроссовки">Ссылка</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>Ссылка с параметром id в URL <br>
+                                    <a href="/index?id=id">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Относительная ссылка в текущем каталоге <br>
+                                    <a href="./index.html">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Относительная ссылка в каталоге about <br>
+                                    <a href="/about/index.html">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Относительная ссылка на уровень выше <br>
+                                    <a href="../index.html">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Относительная ссылка на два уровня выше <br>
+                                    <a href="../../index.html">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Контекстная ссылка в тексте <br>
+                                    Текст с <a href="#form">контекстной ссылкой</a> внутри.</p>
+                            </li>
+                            <li>
+                                <p>Ссылка на фрагмент стороннего сайта <br>
+                                    <a href="https://www.iana.org/help/example-domains#legalnotice">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Ссылка из областей картинки <br>
+                                    <img src="../map.jpg" alt="Картинка с разными областями" usemap="#map"
+                                         width="300" height="300">
+                                    <map name="map">
+                                        <area shape="rect" coords="0,0,150,300" href="https://kubsu.ru/" alt="rect">
+                                        <area shape="circle" coords="150,150,150" href="https://kubsau.ru/" alt="circle">
+                                    </map>
+                                </p>
+                            </li>
+                            <li>
+                                <p>Ссылка с пустым href <br>
+                                    <a href="">Cсылка</a></p>
+                            </li>
+                            <li>
+                                <p>Ссылка без href <br>
+                                    <a>Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Ссылка с запретом перехода для поисковиков <br>
+                                    <a href="/no-follow" rel="nofollow">Ссылка</a></p>
+                            </li>
+                            <li>
+                                <p>Ссылка с запретом индексации <br>
+                                    <a href="/no-index" rel="noindex">Cсылка</a></p>
+                            </li>
+                            <li>
+                                <p>Нумерованный список с title </p>
+                                <ol>
+                                    <li><a href="/link1" title="Описание ссылки 1">Ссылка 1</a></li>
+                                    <li><a href="/link2" title="Описание ссылки 2">Ссылка 2</a></li>
+                                    <li><a href="/link3" title="Описание ссылки 3">Ссылка 3</a></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>Ссылка на FTP с авторизацией <br>
+                                    <a href="ftp://user:password@example/file.txt">FTP файл</a></p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Таблица -->
+                <div id="table" class="card mb-4">
+                    <div class="card-body">
+                        <h2>Таблица "Фильмы о Гарри Поттере"</h2>
+                        <div class="table-responsive">
+                            <table class="table" style="width: 100%; margin: 0 auto;">
+                                <thead>
+                                <tr>
+                                    <th scope="col">№</th>
+                                    <th scope="col">Название фильма</th>
+                                    <th scope="col">Год выхода</th>
+                                    <th scope="col">Рейтинг (Кинопоиск)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Гарри Поттер и философский камень</td>
+                                    <td>2001</td>
+                                    <td>7.6</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Гарри Поттер и Тайная комната</td>
+                                    <td>2002</td>
+                                    <td>7.4</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Гарри Поттер и узник Азкабана</td>
+                                    <td>2004</td>
+                                    <td>7.6</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Гарри Поттер и Кубок огня</td>
+                                    <td>2005</td>
+                                    <td>7.4</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Гарри Поттер и Орден Феникса</td>
+                                    <td>2007</td>
+                                    <td>7.8</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Гарри Поттер и Принц-полукровка</td>
+                                    <td>2009</td>
+                                    <td>7.3</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Гарри Поттер и Дары Смерти: Часть I</td>
+                                    <td>2010</td>
+                                    <td>7.9</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Гарри Поттер и Дары Смерти: Часть II</td>
+                                    <td>2011</td>
+                                    <td>7.4</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Форма -->
+                <div id="form" class="card">
+                    <div class="card-body">
+                        <h2>Форма обратной связи</h2>
+                        <form action="/" method="post">
+                            <div class="mb-3">
+                                <label class="form-label">ФИО:
+                                    <input type="text" class="my-input form-control" name="name" placeholder="Иванов Иван Иванович" required>
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Телефон:
+                                    <input type="tel" class="my-input form-control" name="tel" placeholder="+7 (777) 777-77-77" required>
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email:
+                                    <input type="email" class="my-input form-control" name="email" placeholder="mymail@mail.ru" required>
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">День рождения:
+                                    <input type="date" class="my-input form-control" name="birthday" value="1982-07-10" required>
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                Пол:
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" checked name="sex" value="Мужской" id="male">
+                                    <label class="form-check-label" for="male">Мужской</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sex" value="Женский" id="female">
+                                    <label class="form-check-label" for="female">Женский</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Любимые языки программирования: <br>
+                                    <select class="form-select" name="lang" multiple="multiple" size="11" required>
+                                        <option value="Pascal">Pascal</option>
+                                        <option value="C">C</option>
+                                        <option value="Cpp" selected>C++</option>
+                                        <option value="JavaScript">JavaScript</option>
+                                        <option value="PHP">PHP</option>
+                                        <option value="Python" selected>Python</option>
+                                        <option value="Java" selected>Java</option>
+                                        <option value="Haskel">Haskel</option>
+                                        <option value="Clojure">Clojure</option>
+                                        <option value="Prolog">Prolog</option>
+                                        <option value="Scala">Scala</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Биография: <br>
+                                    <textarea class="my-input form-control" cols="50" rows="5" required></textarea>
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="check-1" id="contract" required>
+                                    <label class="form-check-label" for="contract">C контрактом ознакомлен(а)</label>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn" type="submit">Сохранить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <div style="background-color: lightblue; margin-top: 20px;">
+        <footer class="text-center py-2" style="font-size: 20px;">
+            (с) Тертичник Маргарита
+        </footer>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

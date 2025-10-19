@@ -17,10 +17,6 @@ nav li a {
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-}
-
 #content-wrapper {
     display: flex;
     flex-direction: column;
@@ -50,74 +46,23 @@ logo {
     flex: 0 0 auto;
 }
 
+header {
+    flex: 1;
+}
+
+
+a {
+    text-decoration: none;
+}
+
 logo img {
     width: 100px;
     height: 100px;
 }
 
-header {
-    flex: 1;
-}
-
 header h1 {
     margin: 20px;
     overflow: hidden;
-}
-
-@media screen and (min-width: 1000px) {
-    #content-wrapper #table {
-        order: 2;
-    }
-
-    #content-wrapper #links {
-        order: 1;
-    }
-
-    #content-wrapper #form {
-        order: 3;
-    }
-
-    #header-wrapper {
-        flex-wrap: wrap;
-        position: relative;
-        align-items: flex-start;
-    }
-    nav {
-        order: 2;
-        flex: 0 0 auto;
-        padding: 5px;
-        display: flex;
-        justify-content: flex-end;
-        margin-left: auto;
-        max-width: none;
-        height: auto;
-        min-height: 0;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-    }
-
-    nav li {
-        display: inline;
-    }
-
-    nav li a {
-        display: inline-block;
-        padding: 3px 8px;
-    }
-
-    header {
-        order: 3;
-        flex: 1 1 100%;
-    }
-
-    logo {
-        order: 1;
-        flex: 0 0 auto;
-    }
 }
 
 h2 {
@@ -128,6 +73,9 @@ h2 {
 th, td {
     padding: 12px;
     text-align: center;
+}
+thead {
+    background-color: #4e7987;
 }
 tr:nth-child(even) { background-color: lightblue; }
 tr:hover { background-color: #e6f7fc; }
