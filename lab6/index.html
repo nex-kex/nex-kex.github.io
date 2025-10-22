@@ -175,7 +175,7 @@
 
                 <div style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; padding-bottom: 15px;">
                     <label class="radio-card">
-                        <input type="radio" name="option" value="1" checked>
+                        <input type="radio" name="option" value="calculate" checked>
                         <div class="card-content">
                             <span class="radio-mark"></span>
                             <span class="card-text">Рассчитать стоимость</span>
@@ -183,7 +183,7 @@
                     </label>
 
                     <label class="radio-card">
-                        <input type="radio" name="option" value="2">
+                        <input type="radio" name="option" value="installment">
                         <div class="card-content">
                             <span class="radio-mark"></span>
                             <span class="card-text">Рассрочка</span>
@@ -191,7 +191,7 @@
                     </label>
 
                     <label class="radio-card">
-                        <input type="radio" name="option" value="3">
+                        <input type="radio" name="option" value="buy">
                         <div class="card-content">
                             <span class="radio-mark"></span>
                             <span class="card-text">Купить</span>
@@ -199,7 +199,7 @@
                     </label>
                 </div>
 
-                <div class="hidden">
+                <div id="installment-options" class="hidden">
                     <div class="form-group">
                         <label for="payments">Выберите количество платежей:</label>
                         <select id="payments">
@@ -211,13 +211,13 @@
                     </div>
                 </div>
 
-                <div class="hidden">
+                <div id="buy-options" class="hidden">
                     <div class="form-group">
                         <div class="checkbox-notice">
                             К сожалению, сейчас оплата онлайн не доступна. Оплатить товар можно только в магазине.
                         </div>
                         <label class="checkbox-card">
-                            <input type="checkbox" name="checkbox" required>
+                            <input type="checkbox" id="store-payment" name="checkbox">
                             <div class="card-content">
                                 <span class="checkmark"></span>
                                 <span class="card-text required">Оплачу при получении в магазине</span>
@@ -235,10 +235,24 @@
 </div>
 
 <script>
+    document.querySelectorAll('input[name="option"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            document.getElementById('installment-options').classList.add('hidden');
+            document.getElementById('buy-options').classList.add('hidden');
+
+            if (this.value === 'installment') {
+                document.getElementById('installment-options').classList.remove('hidden');
+            } else if (this.value === 'buy') {
+                document.getElementById('buy-options').classList.remove('hidden');
+            }
+        });
+    });
+
     function calculateTotal() {
         let quantityInput = document.getElementById('quantity');
         let productSelect = document.getElementById('product');
         let resultDiv = document.getElementById('result');
+        let selectedOption = document.querySelector('input[name="option"]:checked').value;
 
         let quantity = parseInt(quantityInput.value);
         let price = parseInt(productSelect.value);
@@ -250,38 +264,49 @@
         }
 
         let totalCost = quantity * price;
+        let resultText = '';
 
-        let selectedOption = productSelect.options[productSelect.selectedIndex];
-        let productName = selectedOption.text.split(' - ')[0];
+        let selectedProduct = productSelect.options[productSelect.selectedIndex];
+        let productName = selectedProduct.text.split(' - ')[0];
 
         let formattedCost = totalCost.toLocaleString('ru-RU');
 
-        resultDiv.innerHTML = `
-            Стоимость заказа: <span style="font-weight: bold;">${formattedCost} руб.</span><br>
-            <small>${quantity} × ${productName} (${price.toLocaleString('ru-RU')} руб.)</small>
-        `;
+        if (selectedOption === 'calculate') {
+            resultText = `
+                Стоимость заказа: <span style="font-weight: bold;">${formattedCost} руб.</span><br>
+                <small>${quantity} × ${productName} (${price.toLocaleString('ru-RU')} руб.)</small>
+            `;
+        } else if (selectedOption === 'installment') {
+            let payments = parseInt(document.getElementById('payments').value);
+            let monthlyPayment = Math.round(totalCost / payments);
+            let formattedMonthly = monthlyPayment.toLocaleString('ru-RU');
+
+            resultText = `
+                Стоимость заказа: <span style="font-weight: bold;">${formattedCost} руб.</span><br>
+                <small>${quantity} × ${productName} (${price.toLocaleString('ru-RU')} руб.)</small><br>
+                Ежемесячный платёж: <span style="font-weight: bold;">${formattedMonthly} руб.</span>
+            `;
+        } else if (selectedOption === 'buy') {
+            let storePayment = document.getElementById('store-payment').checked;
+
+            if (!storePayment) {
+                alert('К сожалению, сейчас доступна только оплата при получении.');
+                return;
+            }
+
+            resultText = `
+                Стоимость заказа: <span style="font-weight: bold;">${formattedCost} руб.</span><br>
+                <small>${quantity} × ${productName} (${price.toLocaleString('ru-RU')} руб.)</small><br>
+                <span style="color: #304e55; font-weight: bold;">Оплата в магазине при получении товара.</span>
+            `;
+        }
+
+        resultDiv.innerHTML = resultText;
         resultDiv.classList.remove('hidden');
     }
 
-    // расчет при нажатии Enter
     document.getElementById('quantity').addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            calculateTotal();
-        }
-    });
-
-    // расчет при изменении типа товара
-    document.getElementById('product').addEventListener('change', function() {
-        let quantity = document.getElementById('quantity').value;
-        if (quantity && quantity > 0) {
-            calculateTotal();
-        }
-    });
-
-    // расчет при изменении количества товара
-    document.getElementById('quantity').addEventListener('change', function() {
-        let product = document.getElementById('product').value;
-        if (product) {
             calculateTotal();
         }
     });
