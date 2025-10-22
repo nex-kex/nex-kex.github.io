@@ -1,0 +1,139 @@
+body {
+    margin: 50px auto;
+    padding: 20px;
+    background-color: lightblue;
+}
+h1 {
+    text-align: center;
+}
+.calculator {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #4e7987;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+button:hover {
+    background-color: lightblue;
+    color: black;
+}
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ccdbe2;
+    border: 2px solid #4e7987;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    color: #304e55;
+}
+.hidden {
+    display: none;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.radio-card {
+    display: block;
+}
+.radio-card input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.card-content {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    gap: 10px;
+}
+.radio-mark {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+.radio-card input[type="radio"]:checked + .card-content {
+    border-color: lightblue;
+    background-color: #d3e9f0;
+}
+.radio-card input[type="radio"]:checked + .card-content .radio-mark {
+    border-color: #4e7987;
+    background-color: #4e7987;
+}
+.card-text {
+    font-size: 16px;
+}
+.checkbox-card {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.checkbox-card input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.checkmark {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.checkbox-card input[type="checkbox"]:checked + .card-content {
+    border-color: lightblue;
+    background-color: #d3e9f0;
+}
+.checkbox-card input[type="checkbox"]:checked + .card-content .checkmark {
+    border-color: #4e7987;
+    background-color: #4e7987;
+}
+.checkbox-card input[type="checkbox"]:checked + .card-content .checkmark:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.checkbox-notice {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
