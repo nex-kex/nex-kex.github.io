@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 6</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: lightblue;
+        }
+        h1 {
+            text-align: center;
+        }
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4e7987;
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: lightblue;
+            color: black;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ccdbe2;
+            border: 2px solid #4e7987;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            color: #304e55;
+        }
+        .hidden {
+            display: none;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .radio-card {
+            display: block;
+        }
+        .radio-card input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .card-content {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            gap: 10px;
+        }
+        .radio-mark {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .radio-card input[type="radio"]:checked + .card-content {
+            border-color: lightblue;
+            background-color: #d3e9f0;
+        }
+        .radio-card input[type="radio"]:checked + .card-content .radio-mark {
+            border-color: #4e7987;
+            background-color: #4e7987;
+        }
+        .card-text {
+            font-size: 16px;
+        }
+        .checkbox-card {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-card input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .checkmark {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .checkbox-card input[type="checkbox"]:checked + .card-content {
+            border-color: lightblue;
+            background-color: #d3e9f0;
+        }
+        .checkbox-card input[type="checkbox"]:checked + .card-content .checkmark {
+            border-color: #4e7987;
+            background-color: #4e7987;
+        }
+        .checkbox-card input[type="checkbox"]:checked + .card-content .checkmark:after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checkbox-notice {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+        <div class="calculator">
+            <h1>Калькулятор стоимости заказа</h1>
+
+            <div class="form-group">
+                <label for="quantity">Количество товара:</label>
+                <input type="number" id="quantity" min="1" value="1" placeholder="Введите количество">
+            </div>
+
+            <div class="form-group">
+                <label for="product">Выберите товар:</label>
+                <select id="product">
+                    <option value="25000">Смартфон - 25 000 руб.</option>
+                    <option value="55000">Ноутбук - 55 000 руб.</option>
+                    <option value="2500">Наушники - 2 500 руб.</option>
+                    <option value="18000">Планшет - 18 000 руб.</option>
+                    <option value="1500">Клавиатура - 1 500 руб.</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+
+                <div style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; padding-bottom: 15px;">
+                    <label class="radio-card">
+                        <input type="radio" name="option" value="1" checked>
+                        <div class="card-content">
+                            <span class="radio-mark"></span>
+                            <span class="card-text">Рассчитать стоимость</span>
+                        </div>
+                    </label>
+
+                    <label class="radio-card">
+                        <input type="radio" name="option" value="2">
+                        <div class="card-content">
+                            <span class="radio-mark"></span>
+                            <span class="card-text">Рассрочка</span>
+                        </div>
+                    </label>
+
+                    <label class="radio-card">
+                        <input type="radio" name="option" value="3">
+                        <div class="card-content">
+                            <span class="radio-mark"></span>
+                            <span class="card-text">Купить</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="hidden">
+                    <div class="form-group">
+                        <label for="payments">Выберите количество платежей:</label>
+                        <select id="payments">
+                            <option value="2">2 платежа</option>
+                            <option value="3">3 платежа</option>
+                            <option value="6">6 платежей</option>
+                            <option value="12">12 платежей</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="hidden">
+                    <div class="form-group">
+                        <div class="checkbox-notice">
+                            К сожалению, сейчас оплата онлайн не доступна. Оплатить товар можно только в магазине.
+                        </div>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="checkbox" required>
+                            <div class="card-content">
+                                <span class="checkmark"></span>
+                                <span class="card-text required">Оплачу при получении в магазине</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="calculateTotal()">Рассчитать стоимость</button>
+
+            <div id="result" class="hidden"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function calculateTotal() {
+        let quantityInput = document.getElementById('quantity');
+        let productSelect = document.getElementById('product');
+        let resultDiv = document.getElementById('result');
+
+        let quantity = parseInt(quantityInput.value);
+        let price = parseInt(productSelect.value);
+
+        if (isNaN(quantity) || quantity <= 0) {
+            alert('Пожалуйста, введите корректное количество товара (больше 0)');
+            quantityInput.focus();
+            return;
+        }
+
+        let totalCost = quantity * price;
+
+        let selectedOption = productSelect.options[productSelect.selectedIndex];
+        let productName = selectedOption.text.split(' - ')[0];
+
+        let formattedCost = totalCost.toLocaleString('ru-RU');
+
+        resultDiv.innerHTML = `
+            Стоимость заказа: <span style="font-weight: bold;">${formattedCost} руб.</span><br>
+            <small>${quantity} × ${productName} (${price.toLocaleString('ru-RU')} руб.)</small>
+        `;
+        resultDiv.classList.remove('hidden');
+    }
+
+    // расчет при нажатии Enter
+    document.getElementById('quantity').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            calculateTotal();
+        }
+    });
+
+    // расчет при изменении типа товара
+    document.getElementById('product').addEventListener('change', function() {
+        let quantity = document.getElementById('quantity').value;
+        if (quantity && quantity > 0) {
+            calculateTotal();
+        }
+    });
+
+    // расчет при изменении количества товара
+    document.getElementById('quantity').addEventListener('change', function() {
+        let product = document.getElementById('product').value;
+        if (product) {
+            calculateTotal();
+        }
+    });
+</script>
+</body>
+</html>
