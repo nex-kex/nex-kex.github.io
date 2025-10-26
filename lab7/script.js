@@ -77,17 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = (currentIndex + 1) % totalItems;
         updateGalleryPosition();
         updatePageInfo();
-
-        // Если дошли до конца оригинальных элементов, мгновенно переходим к началу
-        if (currentIndex === 0) {
-            setTimeout(() => {
-                galleryTrack.style.transition = 'none';
-                updateGalleryPosition();
-                setTimeout(() => {
-                    galleryTrack.style.transition = 'transform 0.5s ease';
-                }, 50);
-            }, 500);
-        }
     }
 
     // Переход к предыдущему изображению
@@ -95,17 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = (currentIndex - 1 + totalItems) % totalItems;
         updateGalleryPosition();
         updatePageInfo();
-
-        // Если дошли до начала оригинальных элементов, мгновенно переходим к концу
-        if (currentIndex === totalItems - 1) {
-            setTimeout(() => {
-                galleryTrack.style.transition = 'none';
-                updateGalleryPosition();
-                setTimeout(() => {
-                    galleryTrack.style.transition = 'transform 0.5s ease';
-                }, 50);
-            }, 500);
-        }
     }
 
     // Обработчики событий для кнопок

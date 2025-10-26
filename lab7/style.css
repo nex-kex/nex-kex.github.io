@@ -22,7 +22,6 @@ h1 {
 }
 .gallery-track {
     display: flex;
-    transition: transform 0.5s ease;
 }
 .gallery-item {
     flex: 0 0 33.333%;
@@ -44,7 +43,6 @@ h1 {
     top: 50%;
     left: 0;
     right: 0;
-    transform: translateY(-50%);
     z-index: 10;
 }
 .nav-btn {
@@ -60,12 +58,10 @@ h1 {
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
-    transition: all 0.3s ease;
 }
 .nav-btn:hover {
     background-color: lightblue;
     color: black;
-    transform: scale(1.1);
 }
 .gallery-pager {
     display: flex;
@@ -84,11 +80,9 @@ h1 {
     border-radius: 50%;
     background-color: #ddd;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 .pager-dot.active {
     background-color: #4e7987;
-    transform: scale(1.2);
 }
 .pager-text {
     font-size: 14px;
@@ -98,7 +92,6 @@ h1 {
     text-align: center;
 }
 
-/* Адаптивность для смартфонов */
 @media (max-width: 768px) {
     body {
         margin: 10px auto;
@@ -129,7 +122,6 @@ h1 {
     }
 }
 
-/* Для очень больших экранов */
 @media (min-width: 1200px) {
     .gallery-item img {
         height: 400px;
