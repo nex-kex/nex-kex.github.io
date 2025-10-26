@@ -54,13 +54,12 @@ function calculateTotal() {
 
         if (!storePayment) {
             alert('К сожалению, сейчас доступна только оплата при получении.');
-            return;
         }
 
         resultText = `
             Стоимость заказа: <span style="font-weight: bold;">${formattedCost} руб.</span><br>
             <small>${quantity} × ${productName} (${price.toLocaleString('ru-RU')} руб.)</small><br>
-            <span style="color: #304e55; font-weight: bold;">Оплата в магазине при получении товара.</span>
+            <span style="color: #304e55; font-weight: bold;">${storePayment ? 'Оплата в магазине при получении товара.' : 'Оплата онлайн сейчас недоступна.'}</span>
         `;
     }
 
