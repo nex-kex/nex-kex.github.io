@@ -8,19 +8,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const items = document.querySelectorAll('.gallery-item');
     const totalItems = items.length;
 
-    // Определяем количество видимых элементов в зависимости от ширины экрана
+    // Создаем клоны для бесконечной прокрутки
+    function createClones() {
+        // Клонируем последние 3 элемента и добавляем в начало
+        for (let i = totalItems - 3; i < totalItems; i++) {
+            const clone = items[i].cloneNode(true);
+            galleryTrack.insertBefore(clone, galleryTrack.firstChild);
+        }
+
+        // Клонируем первые 3 элемента и добавляем в конец
+        for (let i = 0; i < 3; i++) {
+            const clone = items[i].cloneNode(true);
+            galleryTrack.appendChild(clone);
+        }
+    }
+
+    // Определяем количество видимых элементов
     function getVisibleItemsCount() {
         return window.innerWidth <= 768 ? 1 : 3;
     }
 
     let visibleItems = getVisibleItemsCount();
-    let currentPage = 0;
-    let totalPages = Math.ceil(totalItems / visibleItems);
-
-    // Для 8 изображений и 3 видимых за раз: 8/3 = 2.67 → 3 страницы
-    // Страница 0: изображения 0,1,2
-    // Страница 1: изображения 3,4,5
-    // Страница 2: изображения 6,7
+    let currentIndex = 0; // Текущий центральный индекс
+    let totalPages = totalItems;
 
     // Создаем точки-индикаторы
     function createPagerDots() {
@@ -28,11 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < totalPages; i++) {
             const dot = document.createElement('div');
             dot.classList.add('pager-dot');
-            if (i === currentPage) {
+            if (i === currentIndex) {
                 dot.classList.add('active');
             }
             dot.addEventListener('click', () => {
-                goToPage(i);
+                goToIndex(i);
             });
             pagerDots.appendChild(dot);
         }
@@ -40,61 +50,80 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Обновляем информацию о странице
     function updatePageInfo() {
-        pageInfo.textContent = `Страница ${currentPage + 1} из ${totalPages}`;
+        pageInfo.textContent = `Страница ${currentIndex + 1} из ${totalPages}`;
 
         // Обновляем активную точку
         document.querySelectorAll('.pager-dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentPage);
+            dot.classList.toggle('active', index === currentIndex);
         });
     }
 
-    // Переход к определенной странице
-    function goToPage(page) {
-        currentPage = page;
-        const offset = -currentPage * (100 / visibleItems) * visibleItems;
-        galleryTrack.style.transform = `translateX(${offset}%)`;
+    // Переход к определенному индексу
+    function goToIndex(index) {
+        currentIndex = index;
+        updateGalleryPosition();
         updatePageInfo();
     }
 
-    // Переход к следующей странице
-    function nextPage() {
-        if (currentPage < totalPages - 1) {
-            goToPage(currentPage + 1);
-        } else {
-            goToPage(0); // Возврат к первой странице
+    // Обновляем позицию галереи
+    function updateGalleryPosition() {
+        // Смещение учитывает клоны в начале (3 элемента)
+        const offset = -currentIndex * (100 / visibleItems) - (100 / visibleItems) * 3;
+        galleryTrack.style.transform = `translateX(${offset}%)`;
+    }
+
+    // Переход к следующему изображению
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateGalleryPosition();
+        updatePageInfo();
+
+        // Если дошли до конца оригинальных элементов, мгновенно переходим к началу
+        if (currentIndex === 0) {
+            setTimeout(() => {
+                galleryTrack.style.transition = 'none';
+                updateGalleryPosition();
+                setTimeout(() => {
+                    galleryTrack.style.transition = 'transform 0.5s ease';
+                }, 50);
+            }, 500);
         }
     }
 
-    // Переход к предыдущей странице
-    function prevPage() {
-        if (currentPage > 0) {
-            goToPage(currentPage - 1);
-        } else {
-            goToPage(totalPages - 1); // Переход к последней странице
+    // Переход к предыдущему изображению
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateGalleryPosition();
+        updatePageInfo();
+
+        // Если дошли до начала оригинальных элементов, мгновенно переходим к концу
+        if (currentIndex === totalItems - 1) {
+            setTimeout(() => {
+                galleryTrack.style.transition = 'none';
+                updateGalleryPosition();
+                setTimeout(() => {
+                    galleryTrack.style.transition = 'transform 0.5s ease';
+                }, 50);
+            }, 500);
         }
     }
 
     // Обработчики событий для кнопок
-    prevBtn.addEventListener('click', prevPage);
-    nextBtn.addEventListener('click', nextPage);
+    prevBtn.addEventListener('click', prevImage);
+    nextBtn.addEventListener('click', nextImage);
 
     // Обработчик изменения размера окна
     window.addEventListener('resize', function() {
         const newVisibleItems = getVisibleItemsCount();
         if (newVisibleItems !== visibleItems) {
             visibleItems = newVisibleItems;
-            totalPages = Math.ceil(totalItems / visibleItems);
-            createPagerDots();
-            // Сохраняем текущую позицию или переходим к ближайшей странице
-            const newCurrentPage = Math.min(currentPage, totalPages - 1);
-            goToPage(newCurrentPage);
+            updateGalleryPosition();
         }
     });
 
     // Инициализация
+    createClones();
     createPagerDots();
+    updateGalleryPosition();
     updatePageInfo();
-
-    // Автопрокрутка (опционально)
-    // setInterval(nextPage, 5000);
 });
