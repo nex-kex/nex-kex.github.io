@@ -1,0 +1,115 @@
+body {
+    margin: 50px auto;
+    padding: 20px;
+    background-color: lightblue;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #304e55;
+}
+.gallery-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.gallery {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.gallery-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.gallery-item {
+    flex: 0 0 33.333%;
+    padding: 10px;
+    box-sizing: border-box;
+    min-width: 33.333%;
+}
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+.gallery-nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.nav-btn {
+    background-color: #4e7987;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+.nav-btn:hover {
+    background-color: lightblue;
+    color: black;
+}
+.gallery-pager {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+.pager-dots {
+    display: flex;
+    gap: 8px;
+}
+.pager-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.pager-dot.active {
+    background-color: #4e7987;
+    transform: scale(1.2);
+}
+.pager-text {
+    font-size: 14px;
+    color: #304e55;
+    font-weight: bold;
+    min-width: 120px;
+    text-align: center;
+}
+
+/* Адаптивность для смартфонов */
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+    .gallery-container {
+        padding: 20px;
+    }
+    .gallery-pager {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .pager-text {
+        order: -1;
+    }
+}
