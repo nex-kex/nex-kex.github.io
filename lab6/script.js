@@ -51,11 +51,16 @@ function calculateTotal() {
 
 function toggleOptions() {
     let selectedOption = document.querySelector('input[name="option"]:checked').value;
+    
+    const installmentOptions = document.getElementById('installment-options');
+    const buyOptions = document.getElementById('buy-options');
+    installmentOptions.classList.add('hidden');
+    buyOptions.classList.add('hidden');
 
     if (selectedOption === 'installment') {
-        document.getElementById('installment-options').classList.remove('hidden');
+        installmentOptions.classList.remove('hidden');
     } else if (selectedOption === 'buy') {
-        document.getElementById('buy-options').classList.remove('hidden');
+        buyOptions.classList.remove('hidden');
     }
 }
 
