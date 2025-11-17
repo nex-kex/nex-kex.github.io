@@ -7,43 +7,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="open-form-btn" onclick="openForm()">Обратная связь</button>
+    <div class="page-header">
+        <h1 class="page-title">Свяжитесь с нами</h1>
+        <p class="page-subtitle">Мы всегда готовы ответить на ваши вопросы и предложения. Заполните форму обратной связи, и мы свяжемся с вами в ближайшее время.</p>
+    </div>
+
+    <button class="open-form-btn" onclick="openForm()">
+        <span class="btn-icon">✉️</span>
+        Обратная связь
+    </button>
 
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-form">
+            <div class="form-header">
+                <h2 class="form-title">Форма обратной связи</h2>
+                <p class="form-subtitle">Заполните все необходимые поля, и мы обязательно вам ответим</p>
+            </div>
+            
             <div class="message" id="message"></div>
             
             <form id="feedbackForm">
                 <div class="form-group">
-                    <label for="fio">ФИО *</label>
-                    <input type="text" id="fio" name="fio" required>
+                    <label for="fio" class="required">ФИО</label>
+                    <input type="text" id="fio" name="fio" required placeholder="Введите ваше полное имя">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email" class="required">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone" class="required">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 999-99-99">
                 </div>
 
                 <div class="form-group">
-                    <label for="organization">Организация</label>
-                    <input type="text" id="organization" name="organization">
+                    <label for="organization" class="required">Организация</label>
+                    <input type="text" id="organization" required name="organization" placeholder="Название вашей организации">
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Сообщение *</label>
-                    <textarea id="messageText" name="message" required></textarea>
+                    <label for="message" class="required">Сообщение</label>
+                    <textarea id="messageText" name="message" required placeholder="Опишите ваш вопрос или предложение..."></textarea>
                 </div>
 
                 <div class="form-group">
                     <div class="checkbox-group">
                         <input type="checkbox" id="agreement" name="agreement" required>
-                        <label for="agreement">
-                            Согласен с политикой обработки персональных данных *
+                        <label for="agreement" class="required-label">
+                            Согласен с политикой обработки персональных данных
                         </label>
                     </div>
                 </div>
