@@ -122,6 +122,7 @@ textarea {
     border-radius: 8px;
     font-size: 16px;
     background-color: #f9fbff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 input:focus,
