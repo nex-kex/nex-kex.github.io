@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="open-form-btn" onclick="openForm()">Обратная связь</button>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-form">
+            <div class="message" id="message"></div>
+            
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="fio">ФИО *</label>
+                    <input type="text" id="fio" name="fio" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="organization">Организация</label>
+                    <input type="text" id="organization" name="organization">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Сообщение *</label>
+                    <textarea id="messageText" name="message" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement">
+                            Согласен с политикой обработки персональных данных *
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="close-btn" onclick="closeForm()">Закрыть</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"> </script>
+</body>
+</html>
