@@ -9,7 +9,7 @@
 <body>
     <div class="page-header">
         <h1 class="page-title">Свяжитесь с нами</h1>
-        <p class="page-subtitle">Мы всегда готовы ответить на ваши вопросы и предложения. Заполните форму обратной связи, и мы свяжемся с вами в ближайшее время.</p>
+        <p class="page-subtitle">Заполните форму обратной связи, и мы свяжемся с вами в ближайшее время.</p>
     </div>
 
     <button class="open-form-btn" onclick="openForm()">
@@ -23,8 +23,6 @@
                 <h2 class="form-title">Форма обратной связи</h2>
                 <p class="form-subtitle">Заполните все необходимые поля, и мы обязательно вам ответим</p>
             </div>
-            
-            <div class="message" id="message"></div>
             
             <form id="feedbackForm">
                 <div class="form-group">
@@ -60,6 +58,8 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="message" id="message"></div>
 
                 <div class="form-buttons">
                     <button type="button" class="close-btn" onclick="closeForm()">Закрыть</button>
